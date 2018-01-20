@@ -1,22 +1,19 @@
-#import configparser
 from openpyxl import load_workbook
 from configparser import ConfigParser
+import pyodbc
 
-
-#PARSER
+#CONFIGURE
 parser = ConfigParser()
 parser.read_file(open("conf.ini"))
-
 FileLoad = parser['Config']['FileLoad']
+ParametrsCell = parser['Parametrs']['cell']
 #ParametrsRow = parser.getint('Parametrs', 'Row')
 #ParametrsColumn = parser.getint('Parametrs', 'Column')
-ParametrsCell = parser['Parametrs']['cell']
-
 print(ParametrsCell)
-
-
 #print(ParametrsColumn)
 #print(ParametrsRow)
+
+
 
 #WORK EXCEL
 
