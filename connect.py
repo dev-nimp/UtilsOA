@@ -9,17 +9,17 @@ ServerConnect = parser['Connect']['SERVER']
 DatabaseConnect = parser['Connect']['DATABASE']
 UidConnect = parser['Connect']['UID']
 PwdConnect = parser['Connect']['PWD']
-#print('\'' + DriverConnect + ';' + ServerConnect + ';' + DatabaseConnect + ';' + UidConnect + ';' + PwdConnect + '\'')
+
 #connectString = '\'DRIVER={SQL Server}' + ';SERVER=' + ServerConnect + ';DATABASE=' + DatabaseConnect + ';UID=' + UidConnect + ';PWD=' + PwdConnect + '\''
-connectString = '\'DRIVER={SQL Server};SERVER=DESKTOP-4C23489\SQLEXPRESS;DATABASE=DBTEST;UID=admin;PWD=421744Tz\''
+connectString = '\'DRIVER={SQL Server};SERVER=DELOWEB-SERVER\SQLTEST;DATABASE=DBTEST;UID=sa;PWD=1Nz3Z88Lc\''
 print(connectString)
 
 cnxn = pyodbc.connect(
     r'DRIVER={SQL Server};'
-    r'SERVER=DESKTOP-4C23489\SQLEXPRESS;'
+    r'SERVER=DELOWEB-SERVER\SQLTEST;'
     r'DATABASE=DBTEST;'
-    r'UID=admin;'
-    r'PWD=421744Tz'
+    r'UID=sa;'
+    r'PWD=1Nz3Z88Lc'
 )
 
 #cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=DESKTOP-4C23489\SQLEXPRESS;DATABASE=DBTEST;UID=admin;PWD=421744Tz')
@@ -30,7 +30,8 @@ cursor = cnxn.cursor()
 cursor.execute("SELECT * FROM dbo.AbUser")
 row = cursor.fetchone()
 #print(row[0] + row[1])
-while row:
-    print(str(row[0]+row[1]))
-    row = cursor.fetchone()
+print(row[1])
+#while row:
+#    print(str(row[0]+row[1]))
+#    row = cursor.fetchone()
 #cnxn.commit()
